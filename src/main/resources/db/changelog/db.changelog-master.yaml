@@ -1,0 +1,67 @@
+databaseChangeLog:
+  -logicalFilePath: "db.changelog-master.xml"
+  -changeSet:
+    -  id: ITMPJ-514
+    - author: Denis Ilinsky
+      changes:
+        - createTable:
+            tableName: Advisement
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: adviser_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: user_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: created_by
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: meeting_link
+                  type: TEXT
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: type
+                  type: TEXT
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+                    defaultValue: TRIAL, COMMON
+              - column:
+                  name: status
+                  type: TEXT
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+                    defaultValue: PAYMENT_WAITING, START_WAITING, IN_PROGRESS, COMPLETED, CANCELED
+              - column:
+                  name: start_date
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: end_date
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+                    autoIncrement: true
+
