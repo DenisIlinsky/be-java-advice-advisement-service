@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.sql.Timestamp;
 import java.util.UUID;
 @Entity
-@Table(name = "Advisement")
+@Table(name = "advisement")
 @Getter
 @Setter
 public class Advisement {

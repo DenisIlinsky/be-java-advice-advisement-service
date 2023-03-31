@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+
+    <changeSet id="ITMPJ-514" author="Denis ">
+
+        <createTable tableName="advisement">
+
+            <column name="id" type="UUID" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="adviser_id" type="UUID" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="UUID" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meeting_link" type="TEXT" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="TEXT" autoIncrement="true" defaultValue="TRIAL, COMMON">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="TEXT" autoIncrement="true"
+                    defaultValue="PAYMENT_WAITING, START_WAITING, IN_PROGRESS, COMPLETED, CANCELED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date" type="TIMESTAMP" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+
+
+            <column name="end_date" type="TIMESTAMP" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
