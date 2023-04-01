@@ -4,12 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.UUID;
 @Entity
 @Table(name = "advisement")
-
+@Getter
+@Setter
 public class Advisement {
 
     @Id
@@ -17,16 +19,16 @@ public class Advisement {
     private UUID id;
 
     @Column(name = "adviser_id")
-    private UUID adviserId;
+    private UUID adviser_id;
 
     @Column(name = "user_id")
-    private UUID userId;
+    private UUID user_id;
 
     @Column(name = "created_by")
-    private UUID createdBy;
+    private UUID created_by;;
 
     @Column(name = "meeting_link")
-    private String meetingLink;
+    private String meeting_link;
 
     @Column(name = "type")
     private String type;
@@ -35,27 +37,26 @@ public class Advisement {
     private String status;
 
     @Column(name = "start_date")
-    private LocalDateTime startDate;
+    private Timestamp start_date;
 
     @Column(name = "end_date")
-    private LocalDateTime endDate;
+    private Timestamp end_date;
 
-    public Advisement(UUID id, UUID adviser_id, UUID user_id, UUID created_by, String meeting_link, String type, String status, LocalDateTime start_date, LocalDateTime end_date) {
+    public Advisement(UUID id, UUID adviser_id, UUID user_id, UUID created_by, String meeting_link, String type, String status, Timestamp start_date, Timestamp end_date) {
         this.id = id;
-        this.adviserId = adviser_id;
-        this.userId = user_id;
-        this.createdBy = created_by;
-        this.meetingLink = meeting_link;
+        this.adviser_id = adviser_id;
+        this.user_id = user_id;
+        this.created_by = created_by;
+        this.meeting_link = meeting_link;
         this.type = type;
         this.status = status;
-        this.startDate = start_date;
-        this.endDate = end_date;
+        this.start_date = start_date;
+        this.end_date = end_date;
     }
 
     public Advisement() {
 
     }
-
 
     public UUID getId() {
         return id;
@@ -66,35 +67,35 @@ public class Advisement {
     }
 
     public UUID getAdviser_id() {
-        return adviserId;
+        return adviser_id;
     }
 
     public void setAdviser_id(UUID adviser_id) {
-        this.adviserId = adviser_id;
+        this.adviser_id = adviser_id;
     }
 
     public UUID getUser_id() {
-        return userId;
+        return user_id;
     }
 
     public void setUser_id(UUID user_id) {
-        this.userId = user_id;
+        this.user_id = user_id;
     }
 
     public UUID getCreated_by() {
-        return createdBy;
+        return created_by;
     }
 
     public void setCreated_by(UUID created_by) {
-        this.createdBy = created_by;
+        this.created_by = created_by;
     }
 
     public String getMeeting_link() {
-        return meetingLink;
+        return meeting_link;
     }
 
     public void setMeeting_link(String meeting_link) {
-        this.meetingLink = meeting_link;
+        this.meeting_link = meeting_link;
     }
 
     public String getType() {
@@ -113,19 +114,19 @@ public class Advisement {
         this.status = status;
     }
 
-    public LocalDateTime getStart_date() {
-        return startDate;
+    public Timestamp getStart_date() {
+        return start_date;
     }
 
-    public void setStart_date(LocalDateTime start_date) {
-        this.startDate = start_date;
+    public void setStart_date(Timestamp start_date) {
+        this.start_date = start_date;
     }
 
-    public LocalDateTime getEnd_date() {
-        return endDate;
+    public Timestamp getEnd_date() {
+        return end_date;
     }
 
-    public void setEnd_date(LocalDateTime end_date) {
-        this.endDate = end_date;
+    public void setEnd_date(Timestamp end_date) {
+        this.end_date = end_date;
     }
 }
