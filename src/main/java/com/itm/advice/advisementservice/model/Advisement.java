@@ -23,16 +23,16 @@ public class Advisement {
     private UUID id;
 
     @Column(name = "adviser_id")
-    private UUID adviser_id;
+    private UUID adviserId;
 
     @Column(name = "user_id")
-    private UUID user_id;
+    private UUID userId;
 
     @Column(name = "created_by")
-    private UUID created_by;;
+    private UUID createdBy;
 
     @Column(name = "meeting_link")
-    private String meeting_link;
+    private String meetingLink;
 
     @Column(name = "type")
     private String type;
